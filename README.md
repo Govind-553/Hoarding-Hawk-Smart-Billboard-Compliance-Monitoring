@@ -68,7 +68,7 @@ Runs locally on: http://localhost:3000
 
 ## 🚀 Live Demo
 
-- 🌐 **Frontend (Hosted on Vercel):** [Hoarding-Hawk](https://hoarding-hawk.vercel.app/)
+- 🌐 **Frontend (Hosted on Vercel):** [Hoarding-Hawk]()
 
 - ⚙️ **Backend (Deployed on Render):** [API_Endpoint]()
 
