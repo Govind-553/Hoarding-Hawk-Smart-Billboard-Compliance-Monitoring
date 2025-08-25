@@ -15,7 +15,6 @@ Built with **free, open-source tools** and deployed on **Vercel + Render + Supab
 - 📂 **Permit Registry Matching** – OCR + location match with registered billboard data.  
 - 📊 **Officer Dashboard** – Review reports, send notices, dismiss false cases.  
 - 🔐 **Privacy First** – Runs OCR & AI in-browser, minimal data uploaded.  
-- 🌐 **Free Deployment** – Vercel (frontend), Render (backend), Supabase (DB/Auth/Storage).  
 
 ---
 
