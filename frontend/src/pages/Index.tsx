@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Camera, Shield, MapPin } from 'lucide-react';
+import { Camera, Shield, Map, Users, Eye, CheckCircle, AlertTriangle, MapPin } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
-import CitizenApp from './CitizenApp';
+import CitizenApp from '../pages/CitizenApp';
 import OfficerDashboard from '../pages/OfficerDashboard';
 
 const Index = () => {
@@ -72,6 +72,92 @@ const Index = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Advanced on-device processing ensures privacy while maintaining effectiveness
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="shadow-elevated hover:shadow-civic transition-shadow duration-300">
+              <CardHeader>
+                <div className="h-12 w-12 bg-gradient-civic rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>On-Device AI</CardTitle>
+                <CardDescription>
+                  Privacy-first processing with TensorFlow.js and Tesseract OCR
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    Rectangle detection for billboards
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    License plate & QR code reading
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    No data leaves your device
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elevated hover:shadow-civic transition-shadow duration-300">
+              <CardHeader>
+                <div className="h-12 w-12 bg-gradient-civic rounded-lg flex items-center justify-center mb-4">
+                  <Map className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Geospatial Analysis</CardTitle>
+                <CardDescription>
+                  Smart location-based rule enforcement with MapLibre & Turf.js
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-success" />
+                    Distance to junctions & schools
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-success" />
+                    Sensitive zone detection
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-success" />
+                    GPS auto-tagging
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elevated hover:shadow-civic transition-shadow duration-300">
+              <CardHeader>
+                <div className="h-12 w-12 bg-gradient-civic rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Citizen Engagement</CardTitle>
+                <CardDescription>
+                  Offline-capable PWA for field reporting and community involvement
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    Works offline with sync
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    Instant violation feedback
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success" />
+                    Community leaderboards
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

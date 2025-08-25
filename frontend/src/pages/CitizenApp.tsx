@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Camera, MapPin, CheckCircle, AlertTriangle } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
-import { useAuth } from '@/context/AuthContext';
 
 type Location = {
   longitude: number;
@@ -22,7 +21,6 @@ const mockOnDeviceAnalysis = () => {
 };
 
 const CitizenApp = ({ onBack }: { onBack: () => void }) => {
-  const { token } = useAuth();
   const [hasLocation, setHasLocation] = useState<Location | null>(null);
   const [capturedImage, setCapturedImage] = useState<File | null>(null);
   const [analysisResult, setAnalysisResult] = useState<any | null>(null);
@@ -60,11 +58,6 @@ const CitizenApp = ({ onBack }: { onBack: () => void }) => {
       return;
     }
 
-    if (!token) {
-        toast.error('You must be logged in to submit a report.');
-        return;
-    }
-
     setIsSubmitting(true);
     const formData = new FormData();
     formData.append('image', capturedImage);
@@ -78,7 +71,6 @@ const CitizenApp = ({ onBack }: { onBack: () => void }) => {
         {
           headers: {
             'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${token}`,
           },
         }
       );
@@ -141,25 +133,27 @@ const CitizenApp = ({ onBack }: { onBack: () => void }) => {
             </div>
           ) : (
             <>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <p className="text-sm text-muted-foreground">📸 Image captured</p>
-              </div>
-              {analysisResult && (
-                <div className="space-y-2">
-                  <div className={`flex items-center gap-2 p-3 rounded-lg ${analysisResult.geofence_violation ? 'bg-warning/10 border border-warning/20' : 'bg-success/10 border border-success/20'}`}>
-                    {analysisResult.geofence_violation ? <AlertTriangle className="h-4 w-4 text-warning" /> : <CheckCircle className="h-4 w-4 text-success" />}
-                    <span className="text-sm font-medium">
-                      {analysisResult.geofence_violation ? 'Potential Violation: Within 50m of junction' : 'No geofence violations detected.'}
-                    </span>
-                  </div>
-                  <div className={`flex items-center gap-2 p-3 rounded-lg ${analysisResult.no_license_marker ? 'bg-warning/10 border border-warning/20' : 'bg-success/10 border border-success/20'}`}>
-                    {analysisResult.no_license_marker ? <AlertTriangle className="h-4 w-4 text-warning" /> : <CheckCircle className="h-4 w-4 text-success" />}
-                    <span className="text-sm">
-                      {analysisResult.no_license_marker ? 'Potential Violation: Missing license marker' : 'License text detected.'}
-                    </span>
-                  </div>
+              <div className="space-y-4">
+                <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+                  <p className="text-sm text-muted-foreground">📸 Image captured</p>
                 </div>
-              )}
+                {analysisResult && (
+                  <div className="space-y-2">
+                    <div className={`flex items-center gap-2 p-3 rounded-lg ${analysisResult.geofence_violation ? 'bg-warning/10 border border-warning/20' : 'bg-success/10 border border-success/20'}`}>
+                      {analysisResult.geofence_violation ? <AlertTriangle className="h-4 w-4 text-warning" /> : <CheckCircle className="h-4 w-4 text-success" />}
+                      <span className="text-sm font-medium">
+                        {analysisResult.geofence_violation ? 'Potential Violation: Within 50m of junction' : 'No geofence violations detected.'}
+                      </span>
+                    </div>
+                    <div className={`flex items-center gap-2 p-3 rounded-lg ${analysisResult.no_license_marker ? 'bg-warning/10 border border-warning/20' : 'bg-success/10 border border-success/20'}`}>
+                      {analysisResult.no_license_marker ? <AlertTriangle className="h-4 w-4 text-warning" /> : <CheckCircle className="h-4 w-4 text-success" />}
+                      <span className="text-sm">
+                        {analysisResult.no_license_marker ? 'Potential Violation: Missing license marker' : 'License text detected.'}
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </>
           )}
 
