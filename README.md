@@ -68,9 +68,9 @@ Runs locally on: http://localhost:3000
 
 ## 🚀 Live Demo
 
-- 🌐 **Frontend (Hosted on Vercel):** [Hoarding-Hawk]()
+- 🌐 **Frontend (Hosted on Vercel):** [Hoarding-Hawk](https://hoarding-hawk.vercel.app/)
 
-- ⚙️ **Backend (Deployed on Render):** [API_Endpoint]()
+- ⚙️ **Backend (Deployed on Render):** [API_Endpoint](https://hoarding-hawk-api.onrender.com)
 
 ## 👨‍💻 Team
 **Team QuadCoders** – Atharva College of Engineering
