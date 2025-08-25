@@ -1,8 +1,8 @@
 # 🦅 Hoarding Hawk – Smart Billboard Compliance Monitoring System
 
-**Hoarding Hawk** is a smart, citizen-powered reporting system that helps authorities monitor and manage **billboard compliance** in cities.  
+**Hoarding Hawk** is a smart, citizen-powered reporting system that helps authorities monitor and manage **billboard compliance** in cities.<br>  
 It empowers citizens to capture geotagged billboard images using a **Progressive Web App (PWA)**, where **on-device AI + OCR** instantly detect potential violations (e.g., missing license, placement near junctions).  
-Reports are then submitted to a **web dashboard** where officers can review, verify against permit records, and take action.  
+Reports are then submitted to a **web dashboard** where officers can review, verify against permit records, and take action.<br>  
 
 Built with **free, open-source tools** and deployed on **Vercel + Render + Supabase**, Hoarding Hawk is cost-effective, scalable, and designed for real-world impact under the **Smart City Mission**.  
 
@@ -31,22 +31,22 @@ Built with **free, open-source tools** and deployed on **Vercel + Render + Supab
 
 ### 1. Clone the Repository
 
-        git clone https://github.com/Govind-553/Hoarding-Hawk-Smart-Billboard-Compliance-Monitoring.git
-        cd Hoarding-Hawk-Smart-Billboard-Compliance-Monitoring
+          git clone https://github.com/Govind-553/Hoarding-Hawk-Smart-Billboard-Compliance-Monitoring.git
+          cd Hoarding-Hawk-Smart-Billboard-Compliance-Monitoring
 
 ### 2. Frontend Setup
 
-        cd frontend
-        npm install
-        npm run dev
+          cd frontend
+          npm install
+          npm run dev
 
 Runs locally on: http://localhost:8080 
 
 ### 3. Backend Setup
 
-        cd backend
-        npm install
-        npm start
+          cd backend
+          npm install
+          npm start
 
 Runs locally on: http://localhost:3000
 
@@ -59,9 +59,9 @@ Runs locally on: http://localhost:3000
 * Add them in .env file inside backend/:
 
 #### env
-        PORT=3000
-        SUPABASE_URL=your-project-url
-        SUPABASE_KEY=your-anon-key
+          PORT=3000
+          SUPABASE_URL=your-project-url
+          SUPABASE_KEY=your-anon-key
 
 ### 5. Database Schema
 
